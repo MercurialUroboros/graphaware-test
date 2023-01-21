@@ -1,0 +1,68 @@
+[
+   {
+      "data": {
+         "Identification number": "52",
+         "Name": "Alice",
+         "Gender": "F",
+         "Risk": "ATTACKS_NURSES",
+         "Hair length": "0.8000000000",
+         "IQ": "107",
+         "Admission date": "Thu May 31 00:00:00 CEST 2001",
+         "Last breakdown": "Sun Dec 21 11:57:06 CET 2014",
+         "Yearly fee": "62534",
+         "Knows the Joker?": "true"
+      },
+      "kids": {
+         "has_relatives": {
+            "records": [
+               {
+                  "data": {
+                     "Relative ID": "1683",
+                     "Patient ID": "52",
+                     "Is alive?": "true",
+                     "Frequency of visits": "28"
+                  },
+                  "kids": {
+                     "has_phone": {
+                        "records": [
+                           {
+                              "data": {
+                                 "Phone ID": "1404",
+                                 "ID of the relative": "1683",
+                                 "Phone": "+546-382--6016"
+                              },
+                              "kids": {}
+                           },
+                           {
+                              "data": {
+                                 "Phone ID": "1415",
+                                 "ID of the relative": "1683",
+                                 "Phone": "627-097--6349"
+                              },
+                              "kids": {}
+                           },
+                           {
+                              "data": {
+                                 "Phone ID": "2505",
+                                 "ID of the relative": "1683",
+                                 "Phone": "789-902-8231"
+                              },
+                              "kids": {}
+                           },
+                           {
+                              "data": {
+                                 "Phone ID": "3479",
+                                 "ID of the relative": "1683",
+                                 "Phone": "+943-234-5871"
+                              },
+                              "kids": {}
+                           }
+                        ]
+                     }
+                  }
+               }
+            ]
+         }
+      }
+   }
+]
