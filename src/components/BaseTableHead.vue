@@ -5,11 +5,14 @@
         border-slate-300
         font-semibold
         text-slate-900
-        text-left">
+        text-center">
         Actions
       </th>
-      <th v-for="headerLabel in tableHeaders" :key="headerLabel"
-        class="border border-slate-300 font-semibold text-slate-900 text-left">
+      <th
+        v-for="headerLabel in tableHeaders"
+        :key="headerLabel"
+        class="border border-slate-300 font-semibold text-slate-900 text-center"
+      >
         {{ headerLabel }}
       </th>
     </tr>

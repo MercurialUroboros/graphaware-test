@@ -1,10 +1,17 @@
 <template>
   <div>
     <div class="text-white">{{ title }}</div>
-    <table v-for="(rowData, index) in iRows" :key="index"
-      class="table-fixed w-full border-collapse border border-slate-300">
+    <table
+      v-for="(rowData, index) in iRows"
+      :key="index"
+      class="table-fixed w-full border-collapse border border-slate-300"
+    >
       <BaseTableHead :table-headers="getDataTableHeaders(index)" />
-      <BaseTableData :t-row="rowData" :record-position="index" @on-remove-data="onRemoveData" />
+      <BaseTableData
+        :t-row="rowData"
+        :record-position="index"
+        @on-remove-data="onRemoveData"
+      />
     </table>
   </div>
 </template>
@@ -12,8 +19,8 @@
 <script lang="ts" setup>
 import BaseTableHead from './BaseTableHead.vue'
 import BaseTableData from './BaseTableData.vue'
-import { TableRow } from '../types'
 import { ref, type PropType } from 'vue'
+import type { TableRow } from '../types'
 
 const props = defineProps({
   title: {
@@ -24,6 +31,10 @@ const props = defineProps({
     type: Array as PropType<TableRow[]>,
     required: false,
     default: () => []
+  },
+  forceSameHeader: {
+    type: Boolean,
+    default: true
   }
 })
 

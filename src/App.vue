@@ -2,7 +2,11 @@
   <div class="bg-slate-600">
     <div v-if="!isTableFetched">Loading...</div>
     <template v-else>
-      <BaseExpandableTable v-for="(tRow, index) in tableData" :key="index" :rows="[tRow]" />
+      <BaseExpandableTable
+        v-for="(tRow, index) in tableData"
+        :key="index"
+        :rows="[tRow]"
+      />
     </template>
   </div>
 </template>
