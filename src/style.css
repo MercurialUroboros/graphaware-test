@@ -6,8 +6,29 @@ html {
   height: 100vh;
   width: 100vw;
 }
-body, #app {
+body,
+#app {
   height: 100%;
   width: 100%;
 }
 
+@layer components {
+  th {
+    @apply border
+    border-slate-300
+    font-semibold
+    text-slate-900
+    text-center;
+  }
+
+  td {
+    @apply border 
+    border-slate-300
+    text-slate-400 
+    text-center;
+  }
+
+  .action-button {
+    @apply h-6 w-6 text-black hover:text-white;
+  }
+}

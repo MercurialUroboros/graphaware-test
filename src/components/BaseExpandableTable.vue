@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="title"
-      class="text-white"
+      class="text-white text-left"
     >{{ title }}</div>
     <table class="table-fixed w-full border-collapse border border-slate-300">
       <!-- BaseTableHead is outside of the loop because we can assume we don't have to iterate the headers -->

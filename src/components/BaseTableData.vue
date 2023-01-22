@@ -1,11 +1,11 @@
 <template>
   <tr>
-    <td class="border border-slate-300 text-slate-400 text-center">
+    <td>
       <div class="flex items-center justify-center">
         <button
           v-if="kidsData.length > 0"
           type="button"
-          class="bg-green-500 h-6 w-6 hover:text-white"
+          class="action-button bg-green-500 "
           @click="showSubTable = !showSubTable"
         >
           {{ showSubTable? '↑': '↓' }}
@@ -13,7 +13,7 @@
 
         <button
           type="button"
-          class="bg-red-500 h-6 w-6 hover:text-white ml-2"
+          class="action-button bg-red-500 ml-2"
           @click="$emit('on-remove-data', recordPosition)"
         >X
         </button>
@@ -23,7 +23,6 @@
     <td
       v-for="(tData, index) in tableData"
       :key="index"
-      class="border border-slate-300 text-slate-400 text-center"
     >
       {{ tData }}
     </td>

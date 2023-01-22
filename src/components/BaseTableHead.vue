@@ -1,17 +1,12 @@
 <template>
   <thead>
     <tr>
-      <th class="border
-        border-slate-300
-        font-semibold
-        text-slate-900
-        text-center">
+      <th>
         Actions
       </th>
       <th
         v-for="headerLabel in tableHeaders"
         :key="headerLabel"
-        class="border border-slate-300 font-semibold text-slate-900 text-center"
       >
         {{ headerLabel }}
       </th>
