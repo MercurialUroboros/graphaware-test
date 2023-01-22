@@ -46,7 +46,7 @@
 
 <script lang="ts" setup>
 import { type PropType, ref, computed } from 'vue'
-import { TableRow } from '../types'
+import type { TableRow } from '../types'
 import BaseExpandableTable from './BaseExpandableTable.vue'
 
 const props = defineProps({
