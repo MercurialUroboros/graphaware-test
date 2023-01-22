@@ -28,6 +28,10 @@ html {
     text-center;
   }
 
+  tr {
+    @apply hover:bg-slate-900;
+  }
+
   .action-button {
     @apply h-6 w-6 text-black hover:text-white;
   }
