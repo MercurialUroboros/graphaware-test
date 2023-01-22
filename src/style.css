@@ -29,7 +29,7 @@ html {
   }
 
   tr {
-    @apply hover:bg-slate-900;
+    @apply hover:bg-slate-700;
   }
 
   .action-button {
