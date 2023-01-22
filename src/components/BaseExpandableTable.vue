@@ -36,8 +36,7 @@ const props = defineProps({
   },
   rows: {
     type: Array as PropType<TableRow[]>,
-    required: false,
-    default: () => []
+    required: true
   }
 })
 
