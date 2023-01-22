@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import { onMounted, ref, Ref } from 'vue'
 import { getTableData } from './api'
-import { type TableRow } from './types'
+import type { TableRow } from './types'
 import BaseExpandableTable from './components/BaseExpandableTable.vue'
 
 const tableData: Ref<TableRow[]> = ref([])

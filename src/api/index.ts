@@ -1,5 +1,5 @@
 import { http } from '../http-client'
-import { TableRow } from '../types'
+import type { TableRow } from '../types'
 
 export const getTableData = async (datasetNumber = 1) => {
   try {
