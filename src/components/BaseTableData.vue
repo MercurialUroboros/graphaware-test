@@ -1,49 +1,48 @@
 <template>
-  <tbody>
-    <tr>
-      <td>
-        <div class="flex items-center justify-center">
-          <button
-            v-if="kidsData.length > 0"
-            type="button"
-            class="bg-green-500 h-6 w-6 hover:text-white"
-            @click="showSubTable = !showSubTable"
-          >
-            {{ showSubTable? '↑': '↓' }}
-          </button>
+  <tr>
+    <td class="border border-slate-300 text-slate-400 text-center">
+      <div class="flex items-center justify-center">
+        <button
+          v-if="kidsData.length > 0"
+          type="button"
+          class="bg-green-500 h-6 w-6 hover:text-white"
+          @click="showSubTable = !showSubTable"
+        >
+          {{ showSubTable? '↑': '↓' }}
+        </button>
 
-          <button
-            type="button"
-            class="bg-red-500 h-6 w-6 hover:text-white ml-2"
-            @click="$emit('on-remove-data', recordPosition)"
-          >X
-          </button>
+        <button
+          type="button"
+          class="bg-red-500 h-6 w-6 hover:text-white ml-2"
+          @click="$emit('on-remove-data', recordPosition)"
+        >X
+        </button>
 
-        </div>
-      </td>
-      <td
-        v-for="(tData, index) in tableData"
+      </div>
+    </td>
+    <td
+      v-for="(tData, index) in tableData"
+      :key="index"
+      class="border border-slate-300 text-slate-400 text-center"
+    >
+      {{ tData }}
+    </td>
+  </tr>
+  <tr v-if="showSubTable">
+    <!-- +1 Is the Action th -->
+    <td
+      :colspan="tableData.length + 1"
+      class="p-4"
+    >
+      <BaseExpandableTable
+        v-for="([title, dataRecords], index) in Object.entries(tRow.kids)"
         :key="index"
-        class="border border-slate-300 text-slate-400 text-center"
-      >
-        {{ tData }}
-      </td>
-    </tr>
-    <tr v-if="showSubTable">
-      <td
-        :colspan="tableData.length + 1"
-        class="p-4"
-      >
-        <BaseExpandableTable
-          v-for="([title, dataRecords], index) in kidsData"
-          :key="index"
-          :title="title"
-          :rows="dataRecords.records"
-          @on-update-data-table="(row) => onUpdateDataTable(row, dataRecords)"
-        />
-      </td>
-    </tr>
-  </tbody>
+        :title="title"
+        :rows="dataRecords.records"
+        @on-update-data-table="(row) => onUpdateDataTable(row, dataRecords)"
+      />
+    </td>
+  </tr>
 </template>
 
 <script lang="ts" setup>

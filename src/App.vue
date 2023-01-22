@@ -1,28 +1,32 @@
 <template>
   <div class="bg-slate-600">
     <div v-if="!isTableFetched">Loading...</div>
-    <template v-else>
-      <BaseExpandableTable
-        v-for="(tRow, index) in tableData"
-        :key="index"
-        :rows="[tRow]"
-      />
-    </template>
+    <BaseExpandableTable
+      v-else
+      :rows="tableData"
+      @on-update-data-table="onUpdateDataTable"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref, reactive } from 'vue'
+import { onMounted, ref, Ref } from 'vue'
 import { getTableData } from './api'
 import { type TableRow } from './types'
 import BaseExpandableTable from './components/BaseExpandableTable.vue'
 
-let tableData: TableRow[] = reactive([])
+const tableData: Ref<TableRow[]> = ref([])
 const isTableFetched = ref(false)
 
 onMounted(async () => {
-  tableData = await getTableData(2)
+  tableData.value = await getTableData(1)
   isTableFetched.value = true
 })
+
+const onUpdateDataTable = (updatedTableRows: TableRow[]) => {
+  // We can listen to this event to overwrite the original object,
+  // Or we could ignore it, and preserve it. It depends on the use cases
+  tableData.value = updatedTableRows
+}
 
 </script>
